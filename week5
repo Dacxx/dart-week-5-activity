@@ -1,0 +1,67 @@
+main (){
+Chicken();
+Dessert();
+Burger();
+}
+
+class Food{
+    String name;
+    double price;
+    String category;
+
+    Food(String name, double price, String category){
+     this.name = name;
+     this.price = price;
+     this.category = category;
+
+   }
+    void getDetails(){
+      int itemPrice = this.price.toInt();
+        print('Name: $name\n'
+                'Price: P$itemPrice\n');
+    }
+}
+
+List initializeFoods(){    
+    Food spicyChicken = new Food("Spicy Chicken", 70, "CHICKEN");
+    Food sundae = new Food("Sundae", 25, "DESSERT");
+    Food oreoMcflurry = new Food("Oreo McFlurry Chicken", 25, "DESSERT");
+    Food yum = new Food("Yum", 33, "BURGER");
+    Food chickenNuggets = new Food("Chicken Nuggets", 100, "CHICKEN");
+    Food chickenFillet = new Food("Chicken Fillet", 50, "CHICKEN");
+    Food amazingAloha = new Food("Amazing Aloha", 80, "BURGER");
+    Food chessyBacon = new Food("Chessy Bacon", 60, "BURGER");
+    Food cokeFloat = new Food("Coke Float", 25, "DESSERT");
+
+  var item_list = [spicyChicken,sundae,oreoMcflurry,chickenNuggets,chickenFillet,amazingAloha, chessyBacon,cokeFloat,yum];
+  
+  return item_list;
+
+}
+
+Chicken(){
+  print("******* CHICKEN ******\n");
+  initializeFoods().forEach((element) {
+    if (element.category == "CHICKEN"){
+      return element.getDetails();
+    }
+  });
+
+}
+Dessert(){
+  print("******* DESSERT ******\n");
+  initializeFoods().forEach((element) {
+    if (element.category == "DESSERT"){
+      return element.getDetails();
+    }
+  });
+}
+
+Burger(){
+  print("******* BURGER ******\n");
+  initializeFoods().forEach((element) {
+    if (element.category == "BURGER"){
+      return element.getDetails();
+    }
+  });
+}
